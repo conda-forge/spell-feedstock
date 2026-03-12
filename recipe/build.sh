@@ -6,5 +6,7 @@ set -o xtrace -o nounset -o pipefail -o errexit
     --disable-dependency-tracking \
     --prefix=${PREFIX}
 make
+if [[ ${build_platform} == ${target_platform} ]]; then
 make check
+fi
 make install
